@@ -1,4 +1,5 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { Home } from '../pages/Home'
 import { GeneralRoutes } from './GeneralRoutes'
 import { PrivateRoutes } from './PrivateRoutes'
 import { PublicRoutes } from './PublicRoutes'
@@ -28,7 +29,7 @@ export const AppRouter = () => {
 						<Route path='/forgot-password' element={<h1>Forgot Password</h1>} />
 					</Route>
 					<Route element={<GeneralRoutes />}>
-						<Route path='/' element={<h1>Home</h1>} />
+						<Route path='/' element={<Home />} />
 						<Route path='/movie/:movieId' element={<h1>Movie Details</h1>} />
 						<Route path='/*' element={<h1>Error 404</h1>} />
 					</Route>
