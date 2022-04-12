@@ -1,24 +1,28 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import styled from '@emotion/styled'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Footer } from '../componets/Footer'
+import { Header } from '../componets/Header'
 import { Home } from '../pages/Home'
 import { GeneralRoutes } from './GeneralRoutes'
 import { PrivateRoutes } from './PrivateRoutes'
 import { PublicRoutes } from './PublicRoutes'
 
+const Main = styled('main')(({ theme }) => ({
+	backgroundColor: 'silver',
+	minHeight: 'calc(100vh - 112px)',
+	overflow: 'hidden',
+
+	[theme.breakpoints.up('sm')]: {
+		minHeight: 'calc(100vh - 64px)',
+		paddingBottom: 0,
+	},
+}))
+
 export const AppRouter = () => {
 	return (
 		<BrowserRouter>
-			<header>
-				<nav>
-					<Link to='/saved-movies'>Saved Movies </Link>
-					<Link to='/login'>Login </Link>
-					<Link to='/signup'>Signup </Link>
-					<Link to='/forgot-password'>Forgot Password </Link>
-					<Link to='/'>Home </Link>
-					<Link to='/movie/1'>Movie 1 </Link>
-					<Link to='/movies'>404 </Link>
-				</nav>
-			</header>
-			<main>
+			<Header />
+			<Main>
 				<Routes>
 					<Route element={<PrivateRoutes />}>
 						<Route path='/saved-movies' element={<h1>Saved Movies</h1>} />
@@ -34,7 +38,8 @@ export const AppRouter = () => {
 						<Route path='/*' element={<h1>Error 404</h1>} />
 					</Route>
 				</Routes>
-			</main>
+			</Main>
+			<Footer />
 		</BrowserRouter>
 	)
 }

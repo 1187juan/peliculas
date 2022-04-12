@@ -78,7 +78,6 @@ export const MaterialUIConfig = ({ children }) => {
 						'@media screen and (min-width:601px)': {
 							paddingLeft: '32px',
 							paddingRight: '32px',
-							gap: 0,
 						},
 					},
 				},
