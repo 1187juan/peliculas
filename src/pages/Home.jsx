@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom'
-import { HomeVideoFullScreen } from '../componets/HomeVideoFullScreen'
+import { HomeBackgroundVideo } from '../componets/HomeBackgroundVideo'
 import { MoviesGrid } from '../componets/MoviesGrid'
 import { UseDebounced } from '../hooks/UseDebounced'
 export const Home = () => {
@@ -9,7 +9,7 @@ export const Home = () => {
 
 	return (
 		<>
-			{!searchDebounced && <HomeVideoFullScreen />}
+			{!searchDebounced && <HomeBackgroundVideo />}
 			<MoviesGrid key={searchDebounced} search={searchDebounced} />
 		</>
 	)

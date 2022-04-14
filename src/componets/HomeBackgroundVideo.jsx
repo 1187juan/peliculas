@@ -1,26 +1,9 @@
-import styled from '@emotion/styled'
 import videos from '../data/videos.json'
-import { Box } from '@mui/system'
 import { useMediaQuery } from '@mui/material'
 import { useEffect, useState } from 'react'
+import { Video, ContainerVideo } from './HomeBackgroundVideoCss'
 
-const Video = styled('video')(({ top = 0, theme }) => ({
-	position: 'absolute',
-	top: 0,
-	zIndex: -1,
-
-	width: '100%',
-	height: '100%',
-	objectFit: 'cover',
-	objectPosition: 'bottom',
-	transform: `translateY(${top}px)`,
-
-	[theme.breakpoints.down('sm')]: {
-		transition: 'transform 0.2s linear',
-	},
-}))
-
-export const HomeVideoFullScreen = () => {
+export const HomeBackgroundVideo = () => {
 	const isMobile = useMediaQuery(
 		'(max-width: 600px) and (orientation: portrait)'
 	)
@@ -44,7 +27,7 @@ export const HomeVideoFullScreen = () => {
 	}, [])
 
 	return (
-		<>
+		<ContainerVideo>
 			{isMobile && (
 				<Video
 					top={top}
@@ -63,13 +46,6 @@ export const HomeVideoFullScreen = () => {
 					<source src={videos.earthIntro.mp4} type='video/mp4' />
 				</Video>
 			)}
-
-			<Box
-				sx={{
-					width: '100%',
-					height: { xs: 'calc(75vh - 56px)', sm: 'calc(85vh - 64px)' },
-				}}
-			/>
-		</>
+		</ContainerVideo>
 	)
 }

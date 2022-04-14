@@ -1,8 +1,26 @@
 import styled from '@emotion/styled'
-import { MovieRounded } from '@mui/icons-material'
-import PropTypes from 'prop-types'
 
-const CardPlaceholder = styled('div')(({ theme }) => ({
+export const Card = styled('li')(({ theme }) => ({
+	backgroundColor: theme.palette.surface,
+	borderRadius: theme.shape.borderRadius,
+
+	'&, a': {
+		width: '100%',
+		height: '100%',
+	},
+
+	a: {
+		textDecoration: 'none',
+		display: 'flex',
+		overflow: 'hidden',
+	},
+}))
+
+export const CardMedia = styled('img')({
+	maxWidth: '100%',
+})
+
+export const CardPlaceholder = styled('div')(({ theme }) => ({
 	margin: 'auto',
 	textAlign: 'center',
 	color: theme.palette.onSurfaceHigh,
@@ -18,7 +36,7 @@ const CardPlaceholder = styled('div')(({ theme }) => ({
 	},
 }))
 
-const CardTitle = styled('h1')(({ theme }) => ({
+export const CardTitle = styled('h1')(({ theme }) => ({
 	width: 'calc(38vw - 48px)',
 	maxWidth: '228px',
 	margin: 0,
@@ -36,16 +54,3 @@ const CardTitle = styled('h1')(({ theme }) => ({
 		fontSize: '1.2rem',
 	},
 }))
-
-export const CardPlaceholderMovie = ({ title }) => {
-	return (
-		<CardPlaceholder>
-			<MovieRounded />
-			<CardTitle>{title}</CardTitle>
-		</CardPlaceholder>
-	)
-}
-
-CardPlaceholderMovie.propTypes = {
-	title: PropTypes.string,
-}

@@ -1,19 +1,5 @@
-import styled from '@emotion/styled'
-import { ButtonBase } from '@mui/material'
 import PropTypes from 'prop-types'
-
-const Button = styled(ButtonBase)(({ theme }) => ({
-	width: 40,
-	height: 40,
-	overflow: 'hidden',
-
-	backgroundColor: theme.palette.outline,
-	borderRadius: '50%',
-
-	svg: {
-		fontSize: 24,
-	},
-}))
+import { Button } from './IconButtonCss'
 
 export const IconButton = ({ icon, onClick }) => {
 	return <Button onClick={onClick}>{icon}</Button>

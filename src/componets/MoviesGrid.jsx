@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useMovies } from '../hooks/UseMovies'
 import { Empty } from './Empty'
-import { ListMovies } from './ListMovies'
 import { ListMoviesCard } from './ListMoviesCard'
+import { ListMovies } from './MoviesGridCss'
 
 export const MoviesGrid = ({ search }) => {
 	const { data, isLoading, hasNextPage, fetchNextPage } = useMovies(search)
