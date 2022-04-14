@@ -15,11 +15,11 @@ const Form = styled('form')(({ theme }) => ({
 	display: 'flex',
 	alignItems: 'center',
 
-	backgroundColor: theme.palette.light,
+	backgroundColor: theme.palette.outline,
 	borderRadius: theme.shape.borderRadius,
 
 	'&:hover': {
-		backgroundColor: theme.palette.outline,
+		filter: 'brightness(0.95)',
 	},
 
 	[theme.breakpoints.up('sm')]: {

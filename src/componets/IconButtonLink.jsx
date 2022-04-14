@@ -8,7 +8,7 @@ const Button = styled(ButtonBase)(({ theme }) => ({
 	height: 40,
 	overflow: 'hidden',
 
-	backgroundColor: theme.palette.light,
+	backgroundColor: theme.palette.outline,
 	borderRadius: '50%',
 
 	svg: {

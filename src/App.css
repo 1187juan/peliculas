@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'Helvetica Now';
+	src: local('Helvetica Now Extra Bold'), local('HelveticaNow-ExtraBold'),
+		url(../public/assets/fonts/HelveticaNowText-ExtraBold.woff);
+	font-weight: 800;
+}
+
 * {
 	box-sizing: border-box;
 }

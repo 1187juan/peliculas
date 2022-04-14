@@ -1,0 +1,14 @@
+{
+	"earthIntro": {
+		"mp4": "https://firebasestorage.googleapis.com/v0/b/peliculas-6797e.appspot.com/o/Earth%20intro.mp4?alt=media&token=4cba7a5a-1fe4-49bb-a5e6-30020d88a689",
+		"webm": "https://firebasestorage.googleapis.com/v0/b/peliculas-6797e.appspot.com/o/Earth%20intro.webm?alt=media&token=608717bb-92dc-496f-8135-a1dad9fc166a",
+		"webp": "https://firebasestorage.googleapis.com/v0/b/peliculas-6797e.appspot.com/o/Earth%20intro.webp?alt=media&token=555d2e54-5d0f-48ab-9dd9-00b077736034",
+		"jpg": "https://firebasestorage.googleapis.com/v0/b/peliculas-6797e.appspot.com/o/Earth%20intro.jpg?alt=media&token=5df357cf-843a-4dc7-9ef2-fb185c7dcc04"
+	},
+	"earthIntroPortrait": {
+		"mp4": "https://firebasestorage.googleapis.com/v0/b/peliculas-6797e.appspot.com/o/Earth%20intro%20portrait.mp4?alt=media&token=a6ccdfc1-3d7f-4393-ba00-12534c5ea213",
+		"webm": "https://firebasestorage.googleapis.com/v0/b/peliculas-6797e.appspot.com/o/Earth%20intro%20portrait.webm?alt=media&token=25f72954-aa5c-4ebf-8739-ba47bca55a09",
+		"webp": "https://firebasestorage.googleapis.com/v0/b/peliculas-6797e.appspot.com/o/Earth%20intro%20portrait.webp?alt=media&token=faa14788-2eaf-48b1-8693-480450c2653d",
+		"jpg": "https://firebasestorage.googleapis.com/v0/b/peliculas-6797e.appspot.com/o/Earth%20intro%20portrait.jpg?alt=media&token=2af3854e-b090-4a0d-ba35-096270e1a530"
+	}
+}

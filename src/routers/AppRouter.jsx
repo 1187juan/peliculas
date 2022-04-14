@@ -2,15 +2,14 @@ import styled from '@emotion/styled'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Footer } from '../componets/Footer'
 import { Header } from '../componets/Header'
+import { Error404 } from '../pages/Error404'
 import { Home } from '../pages/Home'
 import { GeneralRoutes } from './GeneralRoutes'
 import { PrivateRoutes } from './PrivateRoutes'
 import { PublicRoutes } from './PublicRoutes'
 
 const Main = styled('main')(({ theme }) => ({
-	backgroundColor: 'silver',
 	minHeight: 'calc(100vh - 112px)',
-	overflow: 'hidden',
 
 	[theme.breakpoints.up('sm')]: {
 		minHeight: 'calc(100vh - 64px)',
@@ -35,7 +34,7 @@ export const AppRouter = () => {
 					<Route element={<GeneralRoutes />}>
 						<Route path='/' element={<Home />} />
 						<Route path='/movie/:movieId' element={<h1>Movie Details</h1>} />
-						<Route path='/*' element={<h1>Error 404</h1>} />
+						<Route path='/*' element={<Error404 />} />
 					</Route>
 				</Routes>
 			</Main>

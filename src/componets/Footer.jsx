@@ -7,7 +7,7 @@ import { IconButtonThemeChange } from './IconButtonThemeChange'
 import { IconButtonUser } from './IconButtonUser'
 
 const Box = styled('footer')(({ theme }) => ({
-	position: 'sticky',
+	position: 'fixed',
 	bottom: 0,
 
 	width: '100%',
