@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const ContainerVideo = styled('div')(({ theme }) => ({
+export const Container = styled('div')(({ theme }) => ({
 	width: '100%',
 	height: 'calc(75vh - 56px)',
 

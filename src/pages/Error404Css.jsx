@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const MainContainer = styled('section')(({ theme }) => ({
+export const Container = styled('section')(({ theme }) => ({
 	width: '100%',
 	height: 'calc(100vh - 112px)',
 	padding: '1rem',

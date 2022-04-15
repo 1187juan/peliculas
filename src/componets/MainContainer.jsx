@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const Container = styled('div')(({ theme }) => ({
+export const MainContainer = styled('div')(({ theme }) => ({
 	position: 'relative',
 	width: '100%',
 	maxWidth: '1024px',

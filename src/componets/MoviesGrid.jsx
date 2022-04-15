@@ -1,12 +1,17 @@
+import { MovieRounded } from '@mui/icons-material'
 import { CircularProgress } from '@mui/material'
-import { Box } from '@mui/system'
 import { nanoid } from 'nanoid'
 import PropTypes from 'prop-types'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useMovies } from '../hooks/UseMovies'
-import { Empty } from './Empty'
 import { ListMoviesCard } from './ListMoviesCard'
-import { ListMovies } from './MoviesGridCss'
+import {
+	BoxCircularProgress,
+	ListMovies,
+	EmptySpan,
+	Empty,
+} from './MoviesGridCss'
+import { Title } from './Title'
 
 export const MoviesGrid = ({ search }) => {
 	const { data, isLoading, hasNextPage, fetchNextPage } = useMovies(search)
@@ -14,7 +19,15 @@ export const MoviesGrid = ({ search }) => {
 	const movies = data?.pages.map((page) => page.movies).flat() ?? []
 	const isMovies = !!movies.length
 
-	if (!isMovies && !isLoading) return <Empty search={search} />
+	if (!isMovies && !isLoading)
+		return (
+			<Empty>
+				<MovieRounded sx={{ fontSize: '128px' }} />
+				<Title variant='h4' component='h1' sx={{ color: 'onSurfaceMedium' }}>
+					Sin resultados para <EmptySpan>{search}</EmptySpan>
+				</Title>
+			</Empty>
+		)
 
 	return (
 		<InfiniteScroll
@@ -22,16 +35,16 @@ export const MoviesGrid = ({ search }) => {
 			hasMore={hasNextPage | isLoading}
 			next={() => fetchNextPage()}
 			loader={
-				<Box sx={{ margin: '8px auto', width: '48px' }}>
+				<BoxCircularProgress>
 					<CircularProgress size={48} />
-				</Box>
+				</BoxCircularProgress>
 			}
 		>
 			<ListMovies>
 				{movies.map((movie) => (
 					<ListMoviesCard
 						id={movie.id}
-						imageUrl={movie.posterUrl_300}
+						imageUrl={movie.posterUrl300}
 						key={nanoid()}
 						title={movie.title}
 					/>

@@ -1,7 +1,7 @@
 import videos from '../data/videos.json'
 import { useMediaQuery } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { Video, ContainerVideo } from './HomeBackgroundVideoCss'
+import { Video, Container } from './HomeBackgroundVideoCss'
 
 export const HomeBackgroundVideo = () => {
 	const isMobile = useMediaQuery(
@@ -27,7 +27,7 @@ export const HomeBackgroundVideo = () => {
 	}, [])
 
 	return (
-		<ContainerVideo>
+		<Container>
 			{isMobile && (
 				<Video
 					top={top}
@@ -46,6 +46,6 @@ export const HomeBackgroundVideo = () => {
 					<source src={videos.earthIntro.mp4} type='video/mp4' />
 				</Video>
 			)}
-		</ContainerVideo>
+		</Container>
 	)
 }

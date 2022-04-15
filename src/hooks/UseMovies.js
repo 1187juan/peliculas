@@ -1,4 +1,5 @@
-import { useInfiniteQuery } from 'react-query'
+import { useInfiniteQuery, useQuery } from 'react-query'
+import { getMovie } from '../services/getMovie'
 import { getMovies } from '../services/getMovies'
 import { getSearchMovies } from '../services/getSearchMovies'
 
@@ -15,4 +16,10 @@ export const useMovies = (search) => {
 			staleTime: Infinity,
 		}
 	)
+}
+
+export const useMovie = (movieId) => {
+	return useQuery(['movie', movieId], () => getMovie(movieId), {
+		staleTime: Infinity,
+	})
 }

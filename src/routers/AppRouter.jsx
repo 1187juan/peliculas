@@ -1,21 +1,13 @@
-import styled from '@emotion/styled'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Footer } from '../componets/Footer'
+import { FooterMobile } from '../componets/FooterMobile'
 import { Header } from '../componets/Header'
+import { MovieDetails } from '../componets/MovieDetails'
 import { Error404 } from '../pages/Error404'
 import { Home } from '../pages/Home'
+import { Main } from './AppRouterCss'
 import { GeneralRoutes } from './GeneralRoutes'
 import { PrivateRoutes } from './PrivateRoutes'
 import { PublicRoutes } from './PublicRoutes'
-
-const Main = styled('main')(({ theme }) => ({
-	minHeight: 'calc(100vh - 112px)',
-
-	[theme.breakpoints.up('sm')]: {
-		minHeight: 'calc(100vh - 64px)',
-		paddingBottom: 0,
-	},
-}))
 
 export const AppRouter = () => {
 	return (
@@ -33,12 +25,12 @@ export const AppRouter = () => {
 					</Route>
 					<Route element={<GeneralRoutes />}>
 						<Route path='/' element={<Home />} />
-						<Route path='/movie/:movieId' element={<h1>Movie Details</h1>} />
+						<Route path='/movie/:movieId' element={<MovieDetails />} />
 						<Route path='/*' element={<Error404 />} />
 					</Route>
 				</Routes>
 			</Main>
-			<Footer />
+			<FooterMobile />
 		</BrowserRouter>
 	)
 }

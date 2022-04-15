@@ -1,5 +1,5 @@
 import { API } from './api'
-import { createImageMovieUrl } from './createImageMovieUrl'
+import { createImgMovieUrl } from './createImgMovieUrl'
 
 export const getMovies = async (page = 1) => {
 	const data = await API(`/discover/movie?page=${page}`)
@@ -7,7 +7,7 @@ export const getMovies = async (page = 1) => {
 	const movies = data?.results.map((result) => ({
 		id: result.id,
 		title: result.title,
-		posterUrl_300: createImageMovieUrl(result.poster_path, 300),
+		posterUrl300: createImgMovieUrl(result.poster_path, 300),
 	}))
 
 	const dataAfter = {

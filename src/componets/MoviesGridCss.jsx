@@ -17,3 +17,19 @@ export const ListMovies = styled('ul')(({ theme }) => ({
 		gap: '1rem',
 	},
 }))
+
+export const BoxCircularProgress = styled('div')({
+	margin: '8px auto',
+	width: '48px',
+})
+
+export const Empty = styled('section')(({ theme }) => ({
+	marginTop: 'calc(50vh - 64px)',
+	padding: '16px',
+	textAlign: 'center',
+	height: '100%',
+	transform: 'translateY(-50%)',
+}))
+export const EmptySpan = styled('section')(({ theme }) => ({
+	color: theme.palette.onSurfaceHigh,
+}))
