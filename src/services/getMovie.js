@@ -19,8 +19,11 @@ export const getMovie = async (movieId) => {
 			character: actor.character,
 			profileUrl300: createImgMovieUrl(actor.profile_path, 300),
 		})) ?? []
-
-	console.log(data)
+	const recommendations = data.recommendations?.results.map((movie) => ({
+		id: movie.id,
+		title: movie.title,
+		posterUrl300: createImgMovieUrl(movie.poster_path, 300),
+	}))
 
 	const dataAfter = {
 		backdropUrl500,
@@ -36,6 +39,7 @@ export const getMovie = async (movieId) => {
 		voteCount: data.vote_count,
 		streamUrl200,
 		cast,
+		recommendations,
 	}
 
 	return dataAfter

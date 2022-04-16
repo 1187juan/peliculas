@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { FooterMobile } from '../componets/FooterMobile'
+import { NavMobile } from '../componets/NavMobile'
 import { Header } from '../componets/Header'
 import { MovieDetails } from '../componets/MovieDetails'
 import { Error404 } from '../pages/Error404'
@@ -30,7 +30,7 @@ export const AppRouter = () => {
 					</Route>
 				</Routes>
 			</Main>
-			<FooterMobile />
+			<NavMobile />
 		</BrowserRouter>
 	)
 }

@@ -24,12 +24,17 @@ export const BoxCircularProgress = styled('div')({
 })
 
 export const Empty = styled('section')(({ theme }) => ({
-	marginTop: 'calc(50vh - 64px)',
-	padding: '16px',
+	position: 'absolute',
+	top: '50vh',
+	width: '100%',
 	textAlign: 'center',
-	height: '100%',
 	transform: 'translateY(-50%)',
+
+	[theme.breakpoints.up('sm')]: {
+		top: 'calc(50vh + 32px)',
+	},
 }))
-export const EmptySpan = styled('section')(({ theme }) => ({
+
+export const EmptySpan = styled('span')(({ theme }) => ({
 	color: theme.palette.onSurfaceHigh,
 }))
