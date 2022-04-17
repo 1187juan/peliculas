@@ -8,6 +8,9 @@ import { Main } from './AppRouterCss'
 import { GeneralRoutes } from './GeneralRoutes'
 import { PrivateRoutes } from './PrivateRoutes'
 import { PublicRoutes } from './PublicRoutes'
+import { Signup } from '../pages/Signup'
+import { Login } from '../pages/Login'
+import { ForgotPassword } from '../pages/ForgotPassword'
 
 export const AppRouter = () => {
 	return (
@@ -19,9 +22,9 @@ export const AppRouter = () => {
 						<Route path='/saved-movies' element={<h1>Saved Movies</h1>} />
 					</Route>
 					<Route element={<PublicRoutes />}>
-						<Route path='/login' element={<h1>Login</h1>} />
-						<Route path='/signup' element={<h1>Signup</h1>} />
-						<Route path='/forgot-password' element={<h1>Forgot Password</h1>} />
+						<Route path='/login' element={<Login />} />
+						<Route path='/signup' element={<Signup />} />
+						<Route path='/forgot-password' element={<ForgotPassword />} />
 					</Route>
 					<Route element={<GeneralRoutes />}>
 						<Route path='/' element={<Home />} />

@@ -10,7 +10,7 @@ export const Container = styled('div')(({ theme }) => ({
 }))
 
 export const Video = styled('video')(({ top = 0, theme }) => ({
-	position: 'absolute',
+	position: 'fixed',
 	top: 0,
 	zIndex: -1,
 

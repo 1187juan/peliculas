@@ -14,11 +14,11 @@ export const HomeBackgroundVideo = () => {
 	useEffect(() => {
 		const scroll = () => {
 			const scrollY = window.scrollY
-			const height = window.innerHeight * 1.5
+			const height = window.innerHeight * 2.5
 			if (scrollY > height) return true
 			if (scrollY < 0) return true
 
-			setValueY(scrollY)
+			setValueY(scrollY * -1)
 		}
 
 		document.addEventListener('scroll', scroll)

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 
 export const Main = styled('main')(({ theme }) => ({
+	position: 'relative',
 	minHeight: 'calc(100vh - 56px)',
 	paddingBottom: '56px',
 
