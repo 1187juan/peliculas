@@ -1,10 +1,11 @@
 import styled from '@emotion/styled'
 
-export const ListMovies = styled('ul')(({ theme }) => ({
+export const ListMovies = styled('ul')(({ theme, marginTop }) => ({
 	width: '100%',
 	maxWidth: '1024px',
 	marginLeft: 'auto',
 	marginRight: 'auto',
+	marginTop: marginTop ? 'calc(75vh - 56px)' : 0,
 	display: 'grid',
 	gridTemplateColumns: 'repeat(3, 1fr)',
 	gap: '0.5rem',
@@ -13,6 +14,7 @@ export const ListMovies = styled('ul')(({ theme }) => ({
 
 	[theme.breakpoints.up('sm')]: {
 		gridTemplateColumns: 'repeat(4, 1fr)',
+		marginTop: marginTop ? 'calc(85vh - 64px)' : 0,
 		padding: '2rem',
 		gap: '1rem',
 	},

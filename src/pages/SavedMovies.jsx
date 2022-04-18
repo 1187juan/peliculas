@@ -9,8 +9,7 @@ import { Container, ListMovies } from './SavedMoviesCss'
 
 export const SavedMovies = () => {
 	const queryClient = useQueryClient()
-	const { currentUser } = useAuth()
-	const uid = currentUser?.uid
+	const { uid } = useAuth()
 	const { savedMovies } = queryClient.getQueryData(['userData', uid])
 	const isSavedMovies = !!savedMovies.length
 

@@ -1,7 +1,8 @@
-import { Alert, Button, LinearProgress } from '@mui/material'
+import { Alert, Button } from '@mui/material'
 import PropTypes from 'prop-types'
 import { useAuth } from '../contexts/AuthContext'
 import { useUserData } from '../hooks/UseUserData'
+import { LogoLoading } from './LogoLoading'
 
 export const UserDataProvider = ({ children }) => {
 	const { currentUser } = useAuth()
@@ -9,7 +10,7 @@ export const UserDataProvider = ({ children }) => {
 
 	const { isLoading, error } = useUserData(uid)
 
-	if (isLoading) return <LinearProgress />
+	if (isLoading) return <LogoLoading />
 
 	return (
 		<>

@@ -42,7 +42,7 @@ export const MoviesGrid = ({ search }) => {
 				</BoxCircularProgress>
 			}
 		>
-			<ListMovies>
+			<ListMovies marginTop={!search}>
 				{!search && <MoviesBanner />}
 				{movies.map((movie) => (
 					<ListMoviesCard

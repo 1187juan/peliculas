@@ -1,14 +1,5 @@
 import styled from '@emotion/styled'
 
-export const Container = styled('div')(({ theme }) => ({
-	width: '100%',
-	height: 'calc(75vh - 56px)',
-
-	[theme.breakpoints.up('sm')]: {
-		height: 'calc(85vh - 64px)',
-	},
-}))
-
 export const Video = styled('video')(({ top = 0, theme }) => ({
 	position: 'fixed',
 	top: 0,

@@ -13,9 +13,8 @@ export const SavedMovieButton = ({
 	posterUrl300,
 	backdropUrl300,
 }) => {
-	const { currentUser } = useAuth()
+	const { uid } = useAuth()
 	const queryClient = useQueryClient()
-	const uid = currentUser?.uid ?? null
 	const { mutate, error, isLoading, reset, isSuccess } = useUpdateUserData(uid)
 
 	const { savedMovies } = queryClient.getQueryData(['userData', uid])

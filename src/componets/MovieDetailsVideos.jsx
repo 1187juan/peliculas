@@ -9,7 +9,7 @@ export const MovieDetailsVideos = ({ videos }) => {
 	return (
 		<MainContainer>
 			<Title variant='h4' component='h2'>
-				Reparto
+				Videos
 				<Box component='span' color='text.secondary'>
 					{' '}
 					({videos.length})
