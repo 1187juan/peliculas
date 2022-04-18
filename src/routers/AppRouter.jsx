@@ -11,6 +11,7 @@ import { PublicRoutes } from './PublicRoutes'
 import { Signup } from '../pages/Signup'
 import { Login } from '../pages/Login'
 import { ForgotPassword } from '../pages/ForgotPassword'
+import { SavedMovies } from '../pages/SavedMovies'
 
 export const AppRouter = () => {
 	return (
@@ -19,7 +20,7 @@ export const AppRouter = () => {
 			<Main>
 				<Routes>
 					<Route element={<PrivateRoutes />}>
-						<Route path='/saved-movies' element={<h1>Saved Movies</h1>} />
+						<Route path='/saved-movies' element={<SavedMovies />} />
 					</Route>
 					<Route element={<PublicRoutes />}>
 						<Route path='/login' element={<Login />} />

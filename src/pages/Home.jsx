@@ -5,7 +5,7 @@ import { UseDebounced } from '../hooks/UseDebounced'
 export const Home = () => {
 	const [searchParams] = useSearchParams()
 	const search = searchParams.get('search')
-	const searchDebounced = UseDebounced(search) ?? ''
+	const searchDebounced = UseDebounced(search) ?? null
 
 	return (
 		<>

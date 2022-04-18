@@ -7,6 +7,7 @@ export const getMovie = async (movieId) => {
 	)
 
 	const backdropUrl500 = createImgMovieUrl(data.backdrop_path, 500)
+	const backdropUrl300 = createImgMovieUrl(data.backdrop_path, 300)
 	const posterUrl300 = createImgMovieUrl(data.poster_path, 300)
 	const genres = data.genres.map((genre) => genre.name)
 	const videos = data?.videos.results.map((video) => video.key) ?? []
@@ -27,6 +28,7 @@ export const getMovie = async (movieId) => {
 
 	const dataAfter = {
 		backdropUrl500,
+		backdropUrl300,
 		genres,
 		id: data.id,
 		overview: data.overview,

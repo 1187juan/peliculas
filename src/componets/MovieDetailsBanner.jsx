@@ -17,8 +17,12 @@ import { Title } from './Title'
 import { CircularProgressWithLabel } from './CircularProgressWithLabel'
 import { FavoriteRounded, MovieRounded } from '@mui/icons-material'
 import { MovieTrailer } from './MovieTrailer'
+import { useAuth } from '../contexts/AuthContext'
+import { Link } from 'react-router-dom'
+import { SavedMovieButton } from './SavedMovieButton'
 
 export const MovieDetailsBanner = ({ movie }) => {
+	const { isLogin } = useAuth()
 	const releaseYear = movie.releaseDate.slice(0, 4)
 	const genres = new Intl.ListFormat('es').format(movie.genres)
 	const durationTime =
@@ -74,9 +78,24 @@ export const MovieDetailsBanner = ({ movie }) => {
 						</Title>
 					</Punctuation>
 					<BoxButtons>
-						<Button variant='contained' startIcon={<FavoriteRounded />}>
-							Guardar
-						</Button>
+						{isLogin && (
+							<SavedMovieButton
+								movieId={movie.id}
+								title={movie.title}
+								posterUrl300={movie.posterUrl300}
+								backdropUrl300={movie.backdropUrl300}
+							/>
+						)}
+						{!isLogin && (
+							<Button
+								startIcon={<FavoriteRounded />}
+								variant='contained'
+								LinkComponent={Link}
+								to='/login'
+							>
+								Guardar
+							</Button>
+						)}
 						{isVideos && <MovieTrailer videoId={movie.videos[0]} />}
 					</BoxButtons>
 					<Title component='h2' variant='h4'>

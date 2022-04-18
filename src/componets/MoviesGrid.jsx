@@ -1,10 +1,11 @@
 import { MovieRounded } from '@mui/icons-material'
-import { CircularProgress } from '@mui/material'
+import { CircularProgress, LinearProgress } from '@mui/material'
 import { nanoid } from 'nanoid'
 import PropTypes from 'prop-types'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useMovies } from '../hooks/UseMovies'
 import { ListMoviesCard } from './ListMoviesCard'
+import { MoviesBanner } from './MoviesBanner'
 import {
 	BoxCircularProgress,
 	ListMovies,
@@ -15,9 +16,10 @@ import { Title } from './Title'
 
 export const MoviesGrid = ({ search }) => {
 	const { data, isLoading, hasNextPage, fetchNextPage } = useMovies(search)
-
 	const movies = data?.pages.map((page) => page.movies).flat() ?? []
 	const isMovies = !!movies.length
+
+	if (isLoading) return <LinearProgress />
 
 	if (!isMovies && !isLoading)
 		return (
@@ -41,10 +43,11 @@ export const MoviesGrid = ({ search }) => {
 			}
 		>
 			<ListMovies>
+				{!search && <MoviesBanner />}
 				{movies.map((movie) => (
 					<ListMoviesCard
 						id={movie.id}
-						imageUrl={movie.posterUrl300}
+						imgUrl={movie.posterUrl300}
 						key={nanoid()}
 						title={movie.title}
 					/>
@@ -55,5 +58,5 @@ export const MoviesGrid = ({ search }) => {
 }
 
 MoviesGrid.propTypes = {
-	search: PropTypes.string.isRequired,
+	search: PropTypes.string,
 }

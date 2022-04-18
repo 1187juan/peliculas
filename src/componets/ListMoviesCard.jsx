@@ -8,15 +8,15 @@ import {
 	CardTitle,
 } from './ListMoviesCardCss'
 
-export const ListMoviesCard = ({ imageUrl, title, id }) => {
-	const isImageUrl = !!imageUrl
-	const isNotImageUrl = !imageUrl
+export const ListMoviesCard = ({ imgUrl, title, id }) => {
+	const isImgUrl = !!imgUrl
+	const isNotImgUrl = !imgUrl
 
 	return (
 		<Card>
 			<Link to={'/movie/' + id}>
-				{isImageUrl && <CardMedia src={imageUrl} alt={title} />}
-				{isNotImageUrl && (
+				{isImgUrl && <CardMedia src={imgUrl} alt={title} />}
+				{isNotImgUrl && (
 					<CardPlaceholder>
 						<MovieRounded />
 						<CardTitle>{title}</CardTitle>
@@ -28,7 +28,7 @@ export const ListMoviesCard = ({ imageUrl, title, id }) => {
 }
 
 ListMoviesCard.propTypes = {
-	imageUrl: PropTypes.string,
+	imgUrl: PropTypes.string,
 	title: PropTypes.string.isRequired,
 	id: PropTypes.number.isRequired,
 }

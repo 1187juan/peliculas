@@ -8,6 +8,8 @@ export const getMovies = async (page = 1) => {
 		id: result.id,
 		title: result.title,
 		posterUrl300: createImgMovieUrl(result.poster_path, 300),
+		backdropUrl500: createImgMovieUrl(result.backdrop_path, 500),
+		backdropUrl300: createImgMovieUrl(result.backdrop_path, 300),
 	}))
 
 	const dataAfter = {

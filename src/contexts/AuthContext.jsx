@@ -19,8 +19,10 @@ export const useAuth = () => useContext(AuthContext)
 
 export const AuthProvider = ({ children }) => {
 	const [currentUser, setCurrentUser] = useState(null)
+
 	const [loading, setLoading] = useState(true)
 	const isLogin = !!currentUser
+	const uid = currentUser?.uid ?? null
 
 	const google = new GoogleAuthProvider()
 	const accessWithGoogle = () => signInWithPopup(auth, google)
@@ -50,6 +52,7 @@ export const AuthProvider = ({ children }) => {
 		logout,
 		deleteAccount,
 		resetPassword,
+		uid,
 	}
 
 	useEffect(() => {
